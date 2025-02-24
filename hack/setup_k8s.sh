@@ -164,7 +164,7 @@ function kube_install() {
   sudo apt-get install -y apt-transport-https ca-certificates curl \
     net-tools ipvsadm
 
-  sudo rm /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+  sudo rm -rf /etc/apt/keyrings/kubernetes-apt-keyring.gpg
   if [ $proxy_flag == 'on' ]; then
     sudo curl -x ${http_proxy} \
       -fsSL https://pkgs.k8s.io/core:/stable:/v${k8s_minor_version}/deb/Release.key |
